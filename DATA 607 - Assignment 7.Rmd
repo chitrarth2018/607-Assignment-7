@@ -1,0 +1,41 @@
+---
+title: "DATA 607 - Assignment 7"
+author: "Chitrarth Kaushik"
+date: "3/14/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r file-import, eval=TRUE}
+
+library(XML)
+library(xml2)
+library(jsonlite)
+library(RCurl)
+library(rjson)
+library(dplyr)
+#HTML file books.html
+html_url <- getURL("https://raw.githubusercontent.com/chitrarth2018/607-Assignment-7/master/Books.html")
+books_html <- readHTMLTable(html_url, stringsAsFactors = FALSE)
+
+#XML file books.xml
+xml_url <- getURL("https://raw.githubusercontent.com/chitrarth2018/607-Assignment-7/master/Books.xml")
+books_xml<-xmlToDataFrame(xml_url)
+
+#JSON file books.json
+json_url <- fromJSON(file="https://raw.githubusercontent.com/chitrarth2018/607-Assignment-7/master/Booksjs.json")
+books_json <- do.call("rbind", lapply(json_url, data.frame, stringsAsFactors=FALSE))
+rownames(books_json) <- NULL
+
+books_html
+books_xml
+books_json
+
+#As can be seen from the console outputs for the last three commands that all the imported file appear to be equivalent. However there are subtle differences - for example in the XML import method all the variables ended up being imported as factor.
+
+
+```
+
