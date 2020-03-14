@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mybooks>
+  <book>
+        <Title>Statistics</Title>
+        <Author>Robert White, John White</Author>
+	<ISBN>978-0131497559</ISBN>
+	<Price>24.94</Price>
+    </book>
+    <book>
+	<Title>Discovering Statistics Using R</Title>
+        <Author>Andy Field, Jeremy Miles</Author>
+	<ISBN>978-1446200469</ISBN>
+	<Price>23.79</Price>
+    </book>
+    <book>
+	<Title>Elementary Statistics: A Step By Step Approach</Title>
+        <Author>Allan Bluman</Author>
+	<ISBN>978-9814738750</ISBN>
+	<Price>13.49</Price>
+    </book>
+ </mybooks>
